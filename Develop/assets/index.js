@@ -11,4 +11,4 @@ $(document.ready(function(){
         const time = $(this).parent().attr("id");
         const text = $(this).siblings(".description").val();
         localStorage.setItem(time, text);
-    })
+    });
