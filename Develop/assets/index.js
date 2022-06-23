@@ -5,7 +5,7 @@ $("currentDay").html(currentDate);
 const saveBtn = $(".saveBtn");
 
 // Make save button functional
-$(document.ready(function(){
+$(document).ready(function(){
     $(".saveBtn").on("click", function(){
         // More variables
         const time = $(this).parent().attr("id");
@@ -38,6 +38,12 @@ function saveEvent(){
     $(".hour").each(function(){
         const currentHour = $(this).text();
         const currentEvent = localStorage.getItem(currentHour);
-    })
+        if (currentEvent !== null){
+            $(this).siblings(".plan").val(currentEvent);
+        }
+    });
 }
-}))
+// Call variables
+scheduleBlockColor();
+saveEvent();
+});
