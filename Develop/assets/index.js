@@ -1,7 +1,7 @@
 // Variables
 // Display current date and time of users location
 const currentDate = moment().format("dddd, MMM Do YYYY");
-$("currentDay").html(currentDate);
+$("#currentDay").html(currentDate);
 const saveBtn = $(".saveBtn");
 
 // Make save button functional
@@ -16,16 +16,22 @@ $(document).ready(function(){
     function scheduleBlockColor() {
         const hour = moment().hour();
         $(".time-block").each(function(){
-            const currentHour = parseInt($(this).attr("id"));
-            if (currentHour > hour){
-                $(this).addClass("future");
+            const currentHour = parseInt($(this).attr("id").split("hour")[1]);
+            if (currentHour < hour){
+                $(this).removeClass("future");
+                $(this).removeClass("present");
+                $(this).addClass("past");
             } else if (currentHour === hour) {
+                $(this).removeClass("past");
+                $(this).removeClass("future");
                 $(this).addClass("present");
             } else {
-                $(this).addClass("past");
+                $(this).removeClass("present");
+                $(this).removeClass("past");
+                $(this).addClass("future");
             }
         })
-    };
+    }
 // Make specific hour block save button functional
 saveBtn.on("click", function(){
     const time = $(this).siblings(".hour").text();
