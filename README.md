@@ -27,5 +27,5 @@ I learned how to add the current date and time to my application and more inform
 ## Resources
 * [Kayla Rosario GitHub](https://github.com/krosario314)
 * [GitHub Repo](https://github.com/krosario314/workDayScheduler)
-* [My deployed link]() add link
+* [My deployed link](https://krosario314.github.io/workDayScheduler/)
 * [Moment.js](https://momentjs.com/)
